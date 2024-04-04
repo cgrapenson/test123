@@ -8,6 +8,11 @@ public class Account {
     private String email;
     private String password;
 
+    @Override
+    public String toString() {
+        return " Name: " + firstName + ", " + lastName + ", Department: " + department + ", Email: " + email + ", Password: " + password;
+    }
+
         
     public int getAccountId() {
         return accountId;

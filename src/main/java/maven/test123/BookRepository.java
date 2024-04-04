@@ -31,6 +31,7 @@ public class BookRepository {
                     book.setItemId(rs.getInt("itemID"));
                     book.setAuthor(rs.getString("author"));
                     book.setpublisher(rs.getString("publisher"));
+                    book.setIsbn(rs.getString("isbn"));
                     
                     books.add(book);
                 }

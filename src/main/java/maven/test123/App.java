@@ -3,7 +3,11 @@ package maven.test123;
 import java.sql.*;
 import java.util.*;
 
-public class App {
+import javafx.util.Pair;
+
+public class App {	
+
+
 	public static void main(String[] args) {
 		try {
 			// Create a DatabaseConnector instance
@@ -13,13 +17,25 @@ public class App {
 			if (conn != null) {
 				System.out.println("Connected to the database!");
 				try {
+					boolean loginSuccessful = false;
+					do {
+						Pair<String, String> loginInfo = ConsoleUI.promptForLogin();
+						if (AccountRepository.login(loginInfo.getKey(), loginInfo.getValue(), conn)) {
+							System.out.println("Login successful!");
+							loginSuccessful = true;
+							break;
+						} else {
+							System.out.println("Login failed. Please try again.");
+						}
+					} while (!loginSuccessful);
+					
 					// Create a Scanner object for keyboard input.
 					Scanner console = new Scanner(System.in);
 					int choice;
 					do {
 						// Ask the user to enter a choice.
 						System.out.print(
-								"Enter choice (0: exit, 1: retrieve accounts, 2: search books by author, 3: insert account, 4: retrieve books");
+								"Enter choice (0: exit, 1: retrieve accounts, 2: search books by author, 3: insert account, 4: retrieve books, 5 update account):");
 						choice = console.nextInt();
 
 						// Determine the corresponding action
@@ -48,9 +64,11 @@ public class App {
 								ConsoleUI.printBooks(books);
 								break;
 							case 5:
-								books = BookRepository.retrieveBook(conn);
-								ConsoleUI.printBooks(books);
-
+								// update an account
+								Account updatedAccount = AccountServices.accountToUpdate(console);
+								AccountRepository.updateAccount(conn, updatedAccount);
+								break;
+							case 6:	
 							default:
 								System.out.println("Invalid choice");
 						}

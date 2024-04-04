@@ -1,11 +1,15 @@
 package maven.test123;
 
 import java.util.List;
+import java.util.Scanner;
+
+import javafx.util.Pair;
 
 
 public class ConsoleUI {
      public static void printAccounts(List<Account> accounts) {
         for (Account account : accounts) {
+            System.out.println("Account ID: " + account.getAccountId());
             System.out.println("First Name: " + account.getFirstName());
             System.out.println("Last Name: " + account.getLastName());
             System.out.println("Department: " + account.getDepartment());
@@ -26,4 +30,17 @@ public class ConsoleUI {
         }
     }
 
+    
+public static Pair<String, String> promptForLogin() {
+    Scanner console = new Scanner(System.in);
+
+    System.out.print("Enter your email: ");
+    String email = console.nextLine();
+
+    System.out.print("Enter your password: ");
+    String password = console.nextLine();
+
+    return new Pair<>(email, password);
+
+}
 }
