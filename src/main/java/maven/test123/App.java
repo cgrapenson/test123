@@ -41,8 +41,13 @@ public class App {
 					break;	
 					case 4: 
 					// Retrieve list of books from the database and print them
+					//List<Book> books = BookRepository.retrieveBook(conn);
+					//ConsoleUI.printBooks(books);
+					case 5:
+					//print all books with method printObject
 					List<Book> books = BookRepository.retrieveBook(conn);
-					ConsoleUI.printBooks(books);
+					ConsoleUI.printObject(books);
+					
                     default:
                         System.out.println("Invalid choice");
                     }
