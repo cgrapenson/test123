@@ -1,10 +1,9 @@
 package maven.test123;
 
 import java.util.List;
-import java.lang.reflect.Field;
+
 
 public class ConsoleUI {
-
      public static void printAccounts(List<Account> accounts) {
         for (Account account : accounts) {
             System.out.println("First Name: " + account.getFirstName());
@@ -24,17 +23,6 @@ public class ConsoleUI {
             System.out.println("ISBN: " + book.getIsbn());
             System.out.println("------------------------");
             System.out.println("Publisher: " + book.getpublisher());
-        }
-    }
-    public static void printObject(Object obj) {
-        Field[] fields = obj.getClass().getDeclaredFields();
-        for (Field field : fields) {
-            field.setAccessible(true);
-            try {
-                System.out.println(field.getName() + ": " + field.get(obj));
-            } catch (IllegalAccessException e) {
-                System.out.println("Error accessing field " + field.getName());
-            }
         }
     }
 
