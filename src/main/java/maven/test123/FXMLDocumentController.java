@@ -1,15 +1,18 @@
 package maven.test123;
 
+import java.io.IOException;
 import java.sql.*;
 import java.util.List;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.control.skin.TextFieldSkin;
 import javafx.stage.Stage;
 
 public class FXMLDocumentController {
@@ -37,6 +40,7 @@ public class FXMLDocumentController {
     private Connection conn;
     private AlertMessage alert = new AlertMessage();
     private boolean isPasswordVisible = false;
+    
 
     @FXML
     public void showPassword(ActionEvent event) {
@@ -67,9 +71,24 @@ public class FXMLDocumentController {
     private void handleLoginButtonAction(ActionEvent event) {
         boolean loginSuccess = AccountRepository.login(login_email.getText(), login_password.getText(),conn);
         if (loginSuccess) {
-            alert.successMessage("Login Successfully!");
-        } else {
-            alert.errorMessage("Invalid email or password.");
+            
+            
+        try {
+
+            Parent root = FXMLLoader.load(getClass().getResource("AdminMainScene.fxml"));
+            Stage stage = new Stage();
+
+            stage.setTitle("ENTER TITLE HERE");
+            stage.setScene(new Scene(root));
+            stage.show();
+
+            login_loginBtn.getScene().getWindow().hide();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
+    else {
+        alert.errorMessage("Login failed. Please try again.");
+    }
+}
 }

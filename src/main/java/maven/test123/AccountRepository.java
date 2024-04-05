@@ -110,6 +110,7 @@ public class AccountRepository {
             pstmt.setString(1, email);
             pstmt.setString(2, password);
             ResultSet rs = pstmt.executeQuery();
+            
             return rs.next(); // Returns true if there's at least one matching account
         } catch (SQLException e) {
             e.printStackTrace();

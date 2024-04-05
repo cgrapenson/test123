@@ -1,5 +1,7 @@
 package maven.test123;
 
+import java.io.IOException;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,10 +20,11 @@ public class AppGUI extends Application {
         stage.setMinWidth(340);
         stage.setMinHeight(580);
         
-        stage.setTitle("Library Login");
+        stage.setTitle("Library Logiiin");
         
         stage.setScene(scene);
         stage.show();
+
     }
 
   
