@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="14.0" layoutY="83.0" prefHeight="700.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="50.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane prefHeight="50.0" prefWidth="260.0" styleClass="bg-color-2" stylesheets="@Style/AdminMainDesign.css">
+                           <children>
+                              <Label layoutX="42.0" layoutY="16.0" text="Library Management System">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <Circle fill="DODGERBLUE" layoutX="1002.0" layoutY="25.0" radius="20.0" stroke="WHITE" strokeType="INSIDE" />
+                        <Label layoutX="1033.0" layoutY="17.0" text="Active" />
+                        <Circle fill="#09d338" layoutX="1079.0" layoutY="26.0" radius="7.0" stroke="WHITE" strokeType="INSIDE" />
+                        <Label layoutX="282.0" layoutY="16.0" text="Dashboard">
+                           <font>
+                              <Font name="Tahoma" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="750.0" layoutY="16.0" text="Welcome,">
+                           <font>
+                              <Font name="Tahoma" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="817.0" layoutY="16.0" prefHeight="18.0" prefWidth="110.0" text="Max Mustermann">
+                           <font>
+                              <Font name="Tahoma" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="650.0" prefWidth="260.0" styleClass="bg-color-2" stylesheets="@Style/AdminMainDesign.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="94.0" layoutY="112.0" size="100" text="" />
+                        <Label layoutX="28.0" layoutY="144.0" text="Admin ID:" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="28.0" layoutY="179.0" text="Username:" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="94.0" layoutY="144.0" text="1" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="97.0" layoutY="179.0" text="Max Mustermann" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Line endX="130.0" layoutX="114.0" layoutY="220.0" startX="-100.0" stroke="WHITE" />
+                        <Label layoutX="9.0" layoutY="617.0" text="Logged in as:" textFill="WHITE">
+                           <font>
+                              <Font name="Tahoma" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="101.0" layoutY="617.0" prefHeight="18.0" prefWidth="110.0" text="Max Mustermann" textFill="WHITE">
+                           <font>
+                              <Font name="Tahoma" size="14.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="15.0" layoutY="240.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="231.0" styleClass="nav-btn-2" stylesheets="@Style/AdminMainDesign.css" text="Dashboard" textFill="WHITE">
+                           <font>
+                              <Font size="6.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView glyphName="DASHBOARD" size="25" />
+                           </graphic>
+                        </Button>
+                        <Label layoutX="18.0" layoutY="549.0" prefHeight="12.0" prefWidth="67.0" text="Profile:" textFill="WHITE">
+                           <font>
+                              <Font name="Tahoma" size="14.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="15.0" layoutY="300.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="231.0" styleClass="nav-btn-2" text="Manage Users">
+                           <font>
+                              <Font size="34.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView glyphName="USERS" size="25" />
+                           </graphic>
+                        </Button>
+                        <Button layoutX="15.0" layoutY="360.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="231.0" styleClass="nav-btn-2" text="Manage Catalog">
+                           <font>
+                              <Font size="34.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView glyphName="BOOK" size="25" />
+                           </graphic>
+                        </Button>
+                        <Button layoutX="15.0" layoutY="420.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="231.0" styleClass="nav-btn-2" text="Manage Loans">
+                           <font>
+                              <Font size="34.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView glyphName="BOOK" size="25" />
+                           </graphic>
+                        </Button>
+                        <Button layoutX="15.0" layoutY="480.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="231.0" styleClass="nav-btn-2" text="Reservations">
+                           <font>
+                              <Font size="34.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView glyphName="BOOK" size="25" />
+                           </graphic>
+                        </Button>
+                        <Button layoutX="14.0" layoutY="567.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="231.0" styleClass="nav-btn-2" text="Manage Profile">
+                           <font>
+                              <Font size="34.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView glyphName="GEAR" size="25" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
