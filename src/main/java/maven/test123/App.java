@@ -10,7 +10,7 @@ public class App {
 
 	public static void main(String[] args) {
 		try {
-			// Create a DatabaseConnector instance 
+			// Create a DatabaseConnector instance NY TEST
 			DatabaseConnector dbConnector = new DatabaseConnector("jdbc:mysql://localhost/javadb", "root", "hejsan123");
 			Connection conn = dbConnector.getConnection();
 
